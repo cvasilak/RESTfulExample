@@ -34,15 +34,15 @@ public class MessageRestService {
 	}
 
 	@PUT
-	@Path("/put")
-	public Response dummyPut(@FormParam("name") String name) {
+	@Path("/put/{id}")
+	public Response dummyPut(@PathParam("id") String id) {
 		try {
 			Thread.sleep(10000);
 		} catch (Exception e) {
 		}
 			
 		return Response.status(200)
-			.entity("addUser is called, name : " + name)	
+			.entity("dummyPut is called, id : " + id)
 			.build();
 	}		
 
@@ -55,7 +55,7 @@ public class MessageRestService {
 		}
 			
 		return Response.status(200)
-			.entity("addUser is called, name : " + name)	
+			.entity("dummyPost is called, name : " + name)	
 			.build();
 	}	
 
